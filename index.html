@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-profil.css">
+    <title>Mon profil</title>
+</head>
+<body>
+    <header>
+        <h1>Raoui Abdessamad</h1>
+    </header>
+    <section>
+        <h2>A propos de moi:</h2>
+        <img src="po.jpg">
+        <p>Je m'appelle Raoui Abdessamad, j'ai 20 ans et je suis étudiant en première année du cycle ingénieur en informatique et réseaux à l'École marocaine de sciences d'ingénierie. Passionné par les technologies de l'information, je m'intéresse particulièrement au développement de logiciels et à la gestion des réseaux. Je suis déterminé à acquérir des compétences solides dans ces domaines afin de contribuer efficacement au monde professionnel.</p>
+    </section>
+    <section>
+        <h2>Hobbies et Objectifs</h2>
+        <ul>
+            <li>Musique</li>
+            <li>Sport</li>
+            <li>Cuisine</li>
+        </ul>
+        <ol>
+            <li>Acquérir des bases solides</li>
+            <li>Participer à des projets pratiques</li>
+            <li>Maintenir une bonne santé mentale et physique</li>
+        </ol>
+    <section>
+        <h2>Tableau d'amis</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Ville</th>
+                    <th>Âge</th>
+                    <th>Profil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Abbassid Mouad</td>
+                    <td>Casablanca</td>
+                    <td>22</td>
+                    <td><a href="Nyckboy.github.io">Voir le profil</a></td>
+                </tr>
+                <tr>
+                   <td>Marnissi Nada</td>
+                   <td>Casablanca</td>
+                   <td>21</td>
+                    <td><a href="">Voir le profil</a></td>
+                </tr>
+                <tr>
+                    <td>belayachi Ilyass</td>
+                    <td>Casablanca</td>
+                    <td>20</td>
+                    <td><a href="https://example.com/profil/paul">Voir le profil</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <form id="contactForm">
+        <label for="nom">Nom:</label><br>
+        <input type="text" id="nom" placeholder="Saisir Votre Nom" ><br><br>
+    
+        <label for="email">Adresse email:</label><br>
+        <input type="email" id="email" placeholder="Saisir Votre Email"><br><br>
+    
+        <label for="message">Message:</label><br>
+        <textarea id="message" placeholder="Saisir Votre Message" ></textarea><br><br>
+    
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <script>
+           document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+
+            const nom = document.getElementById('nom').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!nom) {
+                alert("Le champ nom ne doit pas être vide.");
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Veuillez saisir un email valide.");
+                return;
+            }
+
+            if (!message) {
+                alert("Le champ message ne doit pas être vide.");
+                return;
+            }
+
+            alert("Formulaire soumis avec succès !");
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>
